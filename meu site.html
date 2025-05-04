@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amor de Quatro Patas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/03/Cute%20Dogs9806311681.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -2;
+      filter: brightness(50%); /* Escurece a imagem de fundo */
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .top-bar {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #3cb371;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 26px;
+      font-family: 'Montserrat', sans-serif;
+      color: #2a4d69;
+      font-weight: bold;
+      gap: 8px;
+    }
+
+    .logo i {
+      font-size: 32px;
+      color: #3cb371;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: #444;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #3cb371;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      color: #2a4d69;
+      margin-bottom: 20px;
+      font-size: 32px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 20px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #3cb371;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #2e8b57;
+      transform: scale(1.05);
+    }
+
+    .pet-image {
+      margin-top: 30px;
+    }
+
+    .pet-image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .pet-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .top-bar a {
+      text-decoration: none;
+      font-size: 20px;
+      color: #2a4d69;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de topo -->
+  <div class="top-bar">
+    <div class="logo">
+      <a href="#" onclick="window.scrollTo(0, 0)">
+        <i class="fas fa-dog"></i>
+        Amor de Quatro Patas
+      </a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/p.soares1/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/558291346392" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <div class="content">
+    <div class="container">
+      <h1>Amor de Quatro Patas</h1>
+      <p>Faça um pet feliz</p>
+      <p>
+        Adotar um animal é um gesto de amor e responsabilidade. Além de oferecer um lar para um pet abandonado, você ganha um companheiro fiel e carinhoso.
+      </p>
+      <button onclick="mostrarPet()">QUERO ADOTAR UM PET</button>
+
+      <div id="petImage" class="pet-image" style="display: none;">
+        <img src="https://i.imgur.com/BoQmFUU.jpeg" alt="Pet para adoção">
+        <p><strong>Donatela</strong> — dócil e carinhosa, pronta para um novo lar!</p>
+        <!-- Atualização do link para o WhatsApp -->
+        <button onclick="window.location.href='https://wa.me/5582991346392?text=Olá%20eu%20quero%20adotar%20a%20Donatela!'">ADOTAR ESSE ANIMAL</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function mostrarPet() {
+      document.getElementById('petImage').style.display = 'block';
+      document.querySelector('button').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
